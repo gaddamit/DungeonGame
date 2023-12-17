@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CollectableSpeed : Collectable
+{
+    [SerializeField]
+    private float _speedFactor = 1.0f;
+    
+    // Start is called before the first frame update
+    protected override void Start()
+    {
+        base.Start();
+    }
+
+    // Update is called once per frame
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+    public override void OnCollect(PlayerController player)
+    {
+        base.OnCollect(player);
+
+        player.Speed = player.OrigSpeed * _speedFactor;
+    }
+}
