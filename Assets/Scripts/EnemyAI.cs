@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 enum AIState
 {
@@ -22,13 +21,14 @@ public class EnemyAI : MonoBehaviour
     private float _distanceToAttack = 0.5f;
     [SerializeField]
     private float _deathAnimationTime = 2.0f;
+    [Header("Animation")]
     [SerializeField]
     private string[] _animations;
     [SerializeField]
     private GameObject[] _patrolPoints;
 
     private Transform _targetTransform;
-    private UnityEngine.AI.NavMeshAgent _agent;
+    private NavMeshAgent _agent;
 
     private bool _beginDeath = false;
 
@@ -40,6 +40,8 @@ public class EnemyAI : MonoBehaviour
 
     private Vector3 _startingPosition;
     private Quaternion _startingRotation;
+
+    private int _currentPatrolPoint = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,11 @@ public class EnemyAI : MonoBehaviour
         _prevState = AIState.IDLE;
 
         _audioDeath = GetComponent<AudioSource>();
+
+        if(_patrolPoints.Length > 0)
+        {
+            _currentPatrolPoint = 0;
+        }
 
         PerformAIAction();
     }
@@ -115,7 +122,17 @@ public class EnemyAI : MonoBehaviour
 
     private void Patrol()
     {
+        if(_currentPatrolPoint < 0)
+        {
+            return;
+        }
 
+        SetDestination(_patrolPoints[_currentPatrolPoint]);
+        if(IsWithinDistance(_patrolPoints[_currentPatrolPoint], 0.1f))
+        {
+            _currentPatrolPoint++;
+            _currentPatrolPoint %= _patrolPoints.Length;
+        }
     }
 
     private void Attack()
@@ -154,7 +171,7 @@ public class EnemyAI : MonoBehaviour
         {
             _state = AIState.IDLE;
 
-            if(_patrolPoints.Count > 0)
+            if(_patrolPoints.Length > 0)
             {
                 _state = AIState.PATROL;
             }

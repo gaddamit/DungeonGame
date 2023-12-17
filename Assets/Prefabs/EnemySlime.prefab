@@ -125,7 +125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2389955176972377223}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.33, y: 0, z: 1.04}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -167,7 +167,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &4787260048966921937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +190,7 @@ MonoBehaviour:
   - RunFWD
   - Attack01
   - GetHit
+  _patrolPoints: []
 --- !u!195 &4787260048966921938
 NavMeshAgent:
   m_ObjectHideFlags: 0
