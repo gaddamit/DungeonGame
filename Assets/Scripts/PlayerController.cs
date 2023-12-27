@@ -143,21 +143,6 @@ public class PlayerController : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, _colliderOffest);
     }
 
-    private bool IsViewBlocked()
-    {
-        Ray ray = _camera.ScreenPointToRay(transform.position);
-        RaycastHit hitInfo;
-        if(Physics.Raycast(_camera.transform.position, _camera.transform.TransformDirection(Vector3.forward), out hitInfo))
-        {
-            if(hitInfo.transform.gameObject.tag != "Player")
-            {
-                Debug.Log(hitInfo.transform.gameObject);
-            }
-        }
-
-        return false;
-    }
-
     // Cast a ray from mouse to ground then return then position if there's a hit
     private Vector3 AimAtMousePosition()
     {
@@ -186,10 +171,6 @@ public class PlayerController : MonoBehaviour
             {
                 _rb.AddForce(Vector3.up * _jumpForce);
             }
-        }
-        if(IsViewBlocked())
-        {
-
         }
        
         _isJumpPressed = false;
