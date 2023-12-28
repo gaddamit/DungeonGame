@@ -1375,7 +1375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2950779572129502897, guid: 62cf6476e1c4a4253b347e7acaff884b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2950779572129502897, guid: 62cf6476e1c4a4253b347e7acaff884b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1383,7 +1383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2950779572129502897, guid: 62cf6476e1c4a4253b347e7acaff884b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2950779572129502897, guid: 62cf6476e1c4a4253b347e7acaff884b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18265,6 +18265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0dad8c5b31804adf9a181af0538b040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _drawDebug: 0
   _target: {fileID: 1829823037}
   _offset: {x: 0, y: 0, z: -15}
   _transparentMat: {fileID: 2100000, guid: 062054b73201e4f3e9e59edf1d5e36f5, type: 2}
