@@ -18268,6 +18268,7 @@ MonoBehaviour:
   _drawDebug: 0
   _target: {fileID: 1829823037}
   _offset: {x: 0, y: 0, z: -15}
+  _originalMat: {fileID: 2100000, guid: 18f63ff904099034daf971dac5b32582, type: 2}
   _transparentMat: {fileID: 2100000, guid: 062054b73201e4f3e9e59edf1d5e36f5, type: 2}
   _objectsToHideOnBlock:
     serializedVersion: 2

@@ -54,6 +54,10 @@ public class GameManager : MonoBehaviour
                 PauseGame();
             }
         }
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            ScreenCapture.CaptureScreenshot("screenshot.png", 1);
+        }
     }
 
     public void CollectItem(Collectable collectable)
@@ -171,6 +175,8 @@ public class GameManager : MonoBehaviour
 
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+        #elif (UNITY_WEBGL)
+        Application.OpenURL("about:blank");
         #else
         Application.Quit();
         #endif
