@@ -1000,6 +1000,7 @@ GameObject:
   - component: {fileID: 2961362972470942413}
   - component: {fileID: 2953408895944812391}
   - component: {fileID: 2953408895944812408}
+  - component: {fileID: 5495201160995040896}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -1097,6 +1098,19 @@ MonoBehaviour:
   _gameManager: {fileID: 0}
   _trailParticles: {fileID: 0}
   _animations: []
+--- !u!135 &5495201160995040896
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952376135822249129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!1 &2952380510644488071
 GameObject:
   m_ObjectHideFlags: 0

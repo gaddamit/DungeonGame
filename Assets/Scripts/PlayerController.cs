@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 
-
 enum PlayerState
 {
     IDLE,
@@ -181,12 +180,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Collectable collectable = other.GetComponent<Collectable>();
-        if(collectable)
-        {
-            _gameManager?.CollectItem(collectable);
-            collectable.OnCollect(this);
-        }
+
+    }
+
+    public void OnCollect(Collectable collecatable)
+    {
+        _gameManager?.CollectItem(collecatable);
     }
 
     public void Reset()

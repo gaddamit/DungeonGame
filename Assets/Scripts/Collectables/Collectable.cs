@@ -20,7 +20,7 @@ public class Collectable : MonoBehaviour
         transform.Rotate(0, Time.deltaTime * _rotationSpeed, 0, Space.World);
     }
 
-    public virtual void OnCollect(PlayerController player)
+    public virtual void OnCollect(PlayerController playerController)
     {
         _collectSound?.Play();
         _collectableObject?.SetActive(false);
@@ -36,5 +36,15 @@ public class Collectable : MonoBehaviour
     private void HideCollectable()
     {
         gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        PlayerController player = other.GetComponent<PlayerController>();
+        if(player)
+        {
+            OnCollect(player);
+            player.OnCollect(this);
+        }
     }
 }
